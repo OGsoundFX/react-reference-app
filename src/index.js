@@ -2,11 +2,16 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import './index.css';
 import App from './App';
+import Game from './Game'
+import Button from './Button'
+
 import reportWebVitals from './reportWebVitals';
 
 ReactDOM.render(
   <React.StrictMode>
     <App />
+    <Game />
+    <Button />
   </React.StrictMode>,
   document.getElementById('root')
 );
