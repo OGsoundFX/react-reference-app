@@ -4,11 +4,11 @@ class Button extends Component {
   constructor(props) {
     super(props);
     this.state = { clicked: false };
+    // bind the handleCick() function to this component
     this.handleClick = this.handleClick.bind(this);
-    // bind the function to this instance
   }
 
-  handleClick(e) {
+  handleClick(event) {
     this.setState({ clicked: true });
   }
 
