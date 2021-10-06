@@ -47,7 +47,41 @@ ReactDOM.render(
 );
 ````
 
-_**Add a state:**_ <br>
+## Adding props (properties):
+
+_Insert **properties** in the component tag where it is being called or displayed. In our case in **index.js**_
+
+````
+ReactDOM.render(
+  <React.StrictMode>
+    <App />
+    <Game totalScore='100' />
+    <Button />
+  </React.StrictMode>,
+  document.getElementById('root')
+);
+````
+_Display the **properties** in the component file, in our case **Game.js**_ <br>
+
+````
+class Game extends Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+      score: 0,
+      gameOver: false
+    }
+  }
+  render () {
+    return(
+      <div>Score: { this.state.score } out of { this.props.totalScore }</div>
+    )
+  }
+}
+````
+
+
+## Adding a state:
 ````
 import React, { Component } from "react";
 
