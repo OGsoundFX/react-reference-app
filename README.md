@@ -238,7 +238,7 @@ class Button extends Component {
   }
 }
 ````
-_Binding in the Markup intself 2_
+_3- Binding in the Markup intself 2_
 ````
 class Button extends Component {
   constructor(props) {
@@ -260,7 +260,7 @@ class Button extends Component {
   }
 }
 ````
-_Binding at function declaration by creating an arrow function (experimental)_
+_4- Binding at function declaration by creating an arrow function (experimental)_
 ````
 class Button extends Component {
   constructor(props) {
