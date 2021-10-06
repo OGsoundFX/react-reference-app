@@ -150,3 +150,38 @@ class Button extends Component {
 
 export default Button;
 ````
+<br>
+_**Change a state value:**_ <br>
+
+````
+this.setState({ key: newValue });
+````
+**Our button component (Button.js)**
+1- Create a function **functionName(event) {}** (event is optional) that calls the **setState** attribute to change your state value
+2- Bind this function to your **state** with the attribute **.bind(this)**
+3- Call the function in your code **{this.functionName}**
+
+````
+class Button extends Component {
+  constructor(props) {
+    super(props);
+    this.state = { clicked: false };
+    // bind the function to this instance
+    this.handleClick = this.handleClick.bind(this);
+  }
+
+  handleClick(event) {
+    this.setState({ clicked: true });
+  }
+
+  render() {
+    return (
+      <div>
+        <h1>{this.state.clicked ? 'clicked' : 'not clicked'}</h1>
+        <button onClick={this.handleClick}>Click Me</button>
+      </div>
+    )
+  }
+}
+````
+
