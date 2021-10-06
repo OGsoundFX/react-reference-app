@@ -192,4 +192,95 @@ class Button extends Component {
   }
 }
 ````
+### 4 ways to bind:
+_1- Binding in the constructor_
+````
+class Button extends Component {
+  constructor(props) {
+    super(props);
+    this.state = { clicked: false };
+    this.handleClick = this.handleClick.bind(this); // BINDING HERE
+  }
 
+  handleClick(evt) {
+    this.setState({ clicked: true });
+  }
+
+  render() {
+    return (
+      <div>
+        <h1>{this.state.clicked ? 'clicked' : 'not clicked'}</h1>
+        <button onClick={this.handleClick}>Click Me</button>
+      </div>
+    )
+  }
+}
+````
+_2- Binding in the markup itself_
+````
+class Button extends Component {
+  constructor(props) {
+    super(props);
+    this.state = { clicked: false };
+  }
+
+  handleClick(evt) {
+    this.setState({ clicked: true });
+  }
+
+  render() {
+    return (
+      <div>
+        <h1>{this.state.clicked ? 'clicked' : 'not clicked'}</h1>
+        <button onClick={this.handleClick.bind(this)}>Click Me</button> // BINDING HERE
+      </div>
+    )
+  }
+}
+````
+_Binding in the Markup intself 2_
+````
+class Button extends Component {
+  constructor(props) {
+    super(props);
+    this.state = { clicked: false };
+  }
+
+  handleClick(evt) {
+    this.setState({ clicked: true });
+  }
+
+  render() {
+    return (
+      <div>
+        <h1>{this.state.clicked ? 'clicked' : 'not clicked'}</h1>
+        <button onClick={() => handleClick.bind()}>Click Me</button> // BINDING HERE
+      </div>
+    )
+  }
+}
+````
+_Binding at function declaration by creating an arrow function (experimental)_
+````
+class Button extends Component {
+  constructor(props) {
+    super(props);
+    this.state = { clicked: false };
+    // bind the handleCick() function to this component
+    // this.handleClick = this.handleClick.bind(this);
+  }
+
+  handleClick(evt) {
+    this.setState({ clicked: true });
+  }
+
+  render() {
+    return (
+      <div>
+        <h1>{this.state.clicked ? 'clicked' : 'not clicked'}</h1>
+        <button onClick={this.handleClick}>Click Me</button>
+      </div>
+    )
+  }
+}
+````
