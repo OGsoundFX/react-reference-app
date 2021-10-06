@@ -10,7 +10,7 @@ class Game extends Component {
   }
   render () {
     return(
-      <div>Score: { this.state.score }</div>
+      <div>Score: { this.state.score } out of { this.props.totalScore }</div>
     )
   }
 }

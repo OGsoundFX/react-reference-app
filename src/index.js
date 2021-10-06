@@ -10,7 +10,7 @@ import reportWebVitals from './reportWebVitals';
 ReactDOM.render(
   <React.StrictMode>
     <App />
-    <Game />
+    <Game totalScore='100' />
     <Button />
   </React.StrictMode>,
   document.getElementById('root')
