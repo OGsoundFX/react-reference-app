@@ -151,6 +151,7 @@ class Button extends Component {
 export default Button;
 ````
 <br>
+
 _**Change a state value:**_ <br>
 
 ````
